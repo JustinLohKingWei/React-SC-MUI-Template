@@ -4,7 +4,7 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { createContext, useState } from "react";
-import Modal from "./components/modals/Modals";
+import Modal from "./components/modals/Modal";
 
 export const GlobalContext = createContext<any>(null);
 
@@ -30,6 +30,7 @@ function App() {
     <GlobalContext.Provider value={globalContextValues}>
       <BrowserRouter>
         <>
+        {showModal ? currentModal : <></>}
           <Header />
           <Content />
           <Footer />
