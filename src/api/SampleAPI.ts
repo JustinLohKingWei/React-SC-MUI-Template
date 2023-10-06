@@ -1,16 +1,16 @@
 import { AxiosRequestConfig } from "axios";
 
-const BASEURL = "https://cat-fact.herokuapp.com/facts/";
 
-const sampleConfig = (): AxiosRequestConfig => {
-  return {
-    method: "GET",
-    url: BASEURL.toString(),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  };
+const CORSLPROXY = "https://cors-anywhere.herokuapp.com"
+
+const BASEURL = "http://loripsum.net/api/10/short/headers";
+
+ const sampleConfig: AxiosRequestConfig = {
+  method: "GET",
+  url: CORSLPROXY.toString+"/"+BASEURL.toString(),
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+  },
 };
-
-export default sampleConfig;
+export default sampleConfig

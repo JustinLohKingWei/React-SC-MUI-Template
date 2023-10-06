@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react";
 import Section from "./Section";
 import useAxios from "../hooks/useAxios";
 import sampleConfig from "../api/SampleAPI";
 
 function TestAPI() {
-  const { response, error, loading, sendData } = useAxios(sampleConfig());
-
-  useEffect(() => {
-    sendData();
-  });
+  const { response, error, loading } = useAxios(sampleConfig);
 
   return (
     <Section title={"Sample API Call"}>
       {/* Display loading state */}
       {loading && <p>Loading...</p>}
-
       {/* Display response data if available */}
       {response && (
         <>
@@ -22,7 +16,6 @@ function TestAPI() {
           <p>Data: {JSON.stringify(response.data)}</p>
         </>
       )}
-
       Display error if available
       {error && <p>Error: {JSON.stringify(error)}</p>}
     </Section>
