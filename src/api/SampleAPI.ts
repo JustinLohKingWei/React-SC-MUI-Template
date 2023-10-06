@@ -1,13 +1,13 @@
 import { AxiosRequestConfig } from "axios";
 
 
-const CORSLPROXY = "https://cors-anywhere.herokuapp.com"
+const CORSPROXY = "https://cors-anywhere.herokuapp.com" // append before base url to access a cors resource
 
-const BASEURL = "http://loripsum.net/api/10/short/headers";
+const BASEURL = "https://baconipsum.com/api/?type=meat-and-filler";
 
  const sampleConfig: AxiosRequestConfig = {
   method: "GET",
-  url: CORSLPROXY.toString+"/"+BASEURL.toString(),
+  url: BASEURL.toString(),
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json",
