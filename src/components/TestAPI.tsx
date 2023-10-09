@@ -1,6 +1,6 @@
 import Section from "./Section";
 import useAxios from "../hooks/useAxios";
-import sampleConfig from "../api/sampleApi";
+import sampleConfig from "../api/SampleApi";
 
 function TestAPI() {
   const { response, error, loading } = useAxios(sampleConfig);
